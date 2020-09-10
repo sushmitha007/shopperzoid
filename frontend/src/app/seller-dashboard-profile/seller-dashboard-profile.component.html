@@ -1,0 +1,94 @@
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading" style="color: black;">Account Setting </div>
+        <div class="list-group list-group-flush">
+        <a (click)="goToSellerDashboard()" class="list-group-item list-group-item-action bg-light" style="color: black;">Home</a>
+        <a (click)="goToSellerDashboardProfile()" class="list-group-item list-group-item-action bg-light" style="color: black;">My Profile</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light" style="color: black;">Catalogue</a>
+        <a (click)="goToInventory()" class="list-group-item list-group-item-action bg-light" style="color: black;">Inventory</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light" style="color: black;">Pricing</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light" style="color: black;">Orders</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light" style="color: black;">Performance</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light" style="color: black;">Help</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="goToSellerDashboard()" data-toggle="collapse" data-target=".navbar-collapse.show">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="goToSellerDashboardProfile()" data-toggle="collapse" data-target=".navbar-collapse.show">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Catalogue</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" (click)="goToInventory()" data-toggle="collapse" data-target=".navbar-collapse.show">Inventory</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Pricing</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Orders</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Performance</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container-fluid">
+            <!--Seller Dashboard Inventory View-->
+            <section class="container">
+                
+                <div class="logo mt-2"></div>
+                <h3 class="mt-2 pt-1 mb-4 ml-3" style="color: black; font-weight: 900;">Profile</h3>
+                    
+                <!--Relevant Data section-->
+                <section class="row">
+                    <div class="card">
+                        <!-- <img class="card-img-top img-responsive" src="src/assets/New Project (1).png" alt="{{seller.sellerName}}" style="min-height:10rem;"> -->
+                        
+                        <h2>{{seller.sellerName}}</h2>
+                        
+                        <p class="title">
+                            Merchant Partner <i class="fa fa-at" aria-hidden="true"></i> ShopperZoid
+                        </p>
+                        <p>GSTIN: {{seller.sellerGstIn}}</p>
+                        <p>Contact: {{seller.sellerPhone}}</p>
+                        <p>Address: {{seller.sellerAddress}}</p>
+                        <p>Email: {{seller.sellerEmail}}</p>
+                        
+                        <div style="margin: 20px 0;">
+                          <a href="#" style="margin-right: 0.5rem;"><i class="fa fa-twitter"></i></a>  
+                          <a href="#" style="margin-right: 0.5rem;"><i class="fa fa-linkedin"></i></a>  
+                          <a href="#"><i class="fa fa-facebook"></i></a> 
+                        </div>
+                        
+                        <p><button>Contact</button></p>
+                    </div>                      
+                </section>
+            </section>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+    
+    

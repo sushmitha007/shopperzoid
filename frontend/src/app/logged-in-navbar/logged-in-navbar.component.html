@@ -1,0 +1,103 @@
+<div *ngIf="notOnPayment; then ifBlock; else elseBlock">
+</div>
+
+<ng-template #ifBlock>
+  <!-- Navbar Version 2.0 -->
+  <nav class="navbar navbar-expand-lg navbar-light navbar-custom badge-light fixed-top scrolling-navbar" id="main-nav">
+    
+    <div class="container d-flex flex-row">
+      <!-- <a class="navbar-brand" href="/"><span class="navBrand">Shopper-Zoid.</span></a> -->
+      <a class="navbar-brand" href="/">
+        <!-- <img class="logo-image" src="../../assets/New Project (1).png" alt="logo"> -->
+        <!-- <span class="navBrand">ShopperZoid.</span> -->
+        <span class="navBrand">Sh</span>
+        <img class="logo-image" src="../../assets/New Project (1).png" alt="logo">
+        <span class="navBrand">pperZ</span>
+        <img class="logo-image" src="../../assets/New Project (1).png" alt="logo">
+        <span class="navBrand">id.</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span class="nav-font">Resources</span>
+            </a>
+            
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+              <a class="dropdown-item" href="#"><span class="nav-font">Coming Soon</span></a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span class="nav-font">My Shopper-Zoid</span>
+            </a>
+            
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+              <a class="dropdown-item" (click)="goToBuyerProfile()"><span class="nav-font"><i class="fas fa-user"></i>My Profile</span></a>
+              <a class="nav-link ml-3" (click)="logOut()"><span class="nav-font"><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</span></a>
+            </div>
+          </li>
+        </ul>
+
+        <div *ngIf="isBuyer" class="shopping_cart">
+            <a routerLink="app-incart-products">
+              <div>Cart</div>
+
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
+                <g>
+                  <path d="M440.1,422.7l-28-315.3c-0.6-7-6.5-12.3-13.4-12.3h-57.6C340.3,42.5,297.3,0,244.5,0s-95.8,42.5-96.6,95.1H90.3
+                    c-7,0-12.8,5.3-13.4,12.3l-28,315.3c0,0.4-0.1,0.8-0.1,1.2c0,35.9,32.9,65.1,73.4,65.1h244.6c40.5,0,73.4-29.2,73.4-65.1
+                    C440.2,423.5,440.2,423.1,440.1,422.7z M244.5,27c37.9,0,68.8,30.4,69.6,68.1H174.9C175.7,57.4,206.6,27,244.5,27z M366.8,462
+                    H122.2c-25.4,0-46-16.8-46.4-37.5l26.8-302.3h45.2v41c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h139.3v41
+                    c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z"/>
+                </g>
+              </svg>
+            </a>
+        </div>
+          
+        <div class="search d-flex align-items-center justify-content-start">
+          <form class="form">
+            <mat-form-field class="full-width">
+              <mat-label>
+                <mat-icon>search</mat-icon> <b> Search</b>
+              </mat-label>                    
+              
+              <input matInput (keydown.enter)="toSearch($event)" placeholder="">
+            </mat-form-field>
+          </form>
+        </div>    
+      </div>
+    </div>
+  </nav>
+</ng-template>
+
+<ng-template #elseBlock>
+  <section class="super_container">
+    <header class="header">
+      <div class="header_container">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                <!-- Logo -->
+                <div class="logo">
+                  <a href="/">Shopper-Zoid.</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+</ng-template>

@@ -1,0 +1,46 @@
+<br>
+<br>
+<div class="container">    
+    <section class="row d-inline-flex flex-row">
+        <div *ngIf = "isData; else error_content">
+            <hr>
+            <hr>
+            <div *ngIf = "isCheckedMore; else other_content" >
+                    <div class="d-inline-flex" *ngFor = "let product of products| slice:0:1" style="margin-top: 10px;">
+                        
+                        <div class="card" style="background: rgba(255,255,255, 0.12)">
+                            <img class="card-img-top img-responsive" src="{{getProduct.productImage}}" alt="Product image"/>
+                            
+                            <div class="card-body">
+                                <h3>Price: {{product.productPrice}} </h3>
+                                
+                                <button (click) = "goToProduct(product.sellerId)" class="btn btn-dark">Know More</button>
+                            </div>
+                        </div>
+                    </div>
+                <button style="display: flex; align-content: flex-end;" (click) = "checkMore()" class="btn btn-dark">Check for More</button>
+            </div>
+            
+            <ng-template #other_content>
+                <div class="d-inline-flex" *ngFor = "let product of products" style="margin-top: 10px;">
+                    <div class="card ml-5" style="background: rgba(255,255,255, 0.12)">
+                        <img class="card-img-top img-responsive" src="{{getProduct.productImage}}" alt="Product image"/>
+                        
+                        <div class="card-body">
+                            <h3>Price: {{product.productPrice}} </h3>
+
+                            <button (click) = "goToProduct(product.sellerId)" class="btn btn-dark">Know More</button>
+                        </div>
+                    </div>
+                </div>
+                <button style="display: flex; align-content: flex-end; justify-content: flex-start;" (click) = "checkMore()" class="btn btn-dark">Check for Less</button>
+            </ng-template>
+        </div>
+        
+        <ng-template #error_content>
+            <div class="error">
+                <img src="assets/seller-dashboard/no-magento-product-found.jpg" alt="Product Not found" />
+            </div>
+        </ng-template>
+    </section>
+</div>

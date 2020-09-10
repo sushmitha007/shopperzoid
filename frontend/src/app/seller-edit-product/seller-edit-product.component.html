@@ -1,0 +1,22 @@
+<section class="container">
+    <section>
+        <h3>Edit the price and stock of this product:</h3>
+        <h4>{{productName}}</h4>
+        <p>{{desc}}</p>
+    </section>
+    <section>
+        <form [formGroup]="editForm">
+            <mat-form-field>
+                <input matInput type="number" formControlName="price" id="input1" placeholder="Enter Price in Rupees"
+                    required>
+            </mat-form-field><br>
+            <mat-form-field>
+                <input matInput type="number" formControlName="quantity" id="input2" placeholder="Enter Quantity"
+                    required>
+            </mat-form-field>
+            <section class="wrapper">
+                <button class="btn btn-primary" (click)="doEdit()">Submit</button>
+            </section>
+        </form><br>
+    </section>
+</section>
